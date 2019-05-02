@@ -6,7 +6,6 @@ namespace Varguiniano
     /// <inheritdoc />
     /// <summary>
     /// Class with some utilities for editors.
-    /// Refer to: https://gist.github.com/varguiniano/2a488f1e438ca334208eb8647fc99176
     /// </summary>
     public abstract class ExtendedEditor<T> : Editor where T : MonoBehaviour
     {
