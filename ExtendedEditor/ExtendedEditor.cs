@@ -20,6 +20,7 @@ namespace Varguiniano
         /// </summary>
         public override void OnInspectorGUI()
         {
+            serializedObject.Update();
             PaintUi();
             serializedObject.ApplyModifiedProperties();
         }
