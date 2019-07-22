@@ -23,6 +23,7 @@ namespace Varguiniano
             serializedObject.Update();
             PaintUi();
             serializedObject.ApplyModifiedProperties();
+            EditorApplication.update.Invoke();
         }
 
         /// <summary>
