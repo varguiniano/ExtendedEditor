@@ -21,8 +21,11 @@ namespace Varguiniano
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
+            EditorGUI.BeginChangeCheck();
             PaintUi();
+            if (!EditorGUI.EndChangeCheck()) return;
             serializedObject.ApplyModifiedProperties();
+            EditorUtility.SetDirty(TargetObject);
             EditorApplication.update.Invoke();
         }
 
