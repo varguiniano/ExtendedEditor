@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Varguiniano
+namespace Varguiniano.ExtendedEditor
 {
     /// <inheritdoc />
     /// <summary>

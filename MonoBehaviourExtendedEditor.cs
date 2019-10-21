@@ -1,13 +1,13 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Varguiniano
+namespace Varguiniano.ExtendedEditor
 {
     /// <inheritdoc />
     /// <summary>
     /// Class with some utilities for editors.
     /// </summary>
-    public abstract class ExtendedEditor<T> : Editor where T : MonoBehaviour
+    public abstract class MonoBehaviourExtendedEditor<T> : Editor where T : MonoBehaviour
     {
         /// <summary>
         /// Reference to the object being edited.
