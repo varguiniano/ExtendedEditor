@@ -1,13 +1,13 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Varguiniano.ExtendedEditor
+namespace Varguiniano.ExtendedEditor.Editor
 {
     /// <inheritdoc />
     /// <summary>
     /// Class with some utilities for editors.
     /// </summary>
-    public abstract class ScriptableExtendedEditor<T> : Editor where T : ScriptableObject
+    public abstract class ScriptableExtendedEditor<T> : UnityEditor.Editor where T : ScriptableObject
     {
         /// <summary>
         /// Reference to the object being edited.
@@ -37,10 +37,10 @@ namespace Varguiniano.ExtendedEditor
         /// <summary>
         /// Paints the property given.
         /// </summary>
-        /// <param name="name">Name of that property.</param>
+        /// <param name="propertyName">Name of that property.</param>
         /// <param name="includeChildren">Should it include children?</param>
-        protected void PaintProperty(string name, bool includeChildren = false) =>
-            PaintProperty(serializedObject.FindProperty(name), includeChildren);
+        protected void PaintProperty(string propertyName, bool includeChildren = false) =>
+            PaintProperty(serializedObject.FindProperty(propertyName), includeChildren);
 
         /// <summary>
         /// Paints the property given.
@@ -63,19 +63,19 @@ namespace Varguiniano.ExtendedEditor
         /// Paints the property given.
         /// </summary>
         /// <param name="serializedProperty">Property to look into.</param>
-        /// <param name="name">Name of that property.</param>
+        /// <param name="propertyName">Name of that property.</param>
         /// <param name="includeChildren">Should it include children?</param>
-        protected void PaintPropertyFromProperty(SerializedProperty serializedProperty, string name, bool includeChildren = false) =>
-            EditorGUILayout.PropertyField(serializedProperty.FindPropertyRelative(name), includeChildren);
+        protected void PaintPropertyFromProperty(SerializedProperty serializedProperty, string propertyName, bool includeChildren = false) =>
+            EditorGUILayout.PropertyField(serializedProperty.FindPropertyRelative(propertyName), includeChildren);
 
         /// <summary>
         /// Paints the property given.
         /// </summary>
         /// <param name="rect">Rect to paint to.</param>
         /// <param name="serializedProperty">Property to look into.</param>
-        /// <param name="name">Name of that property.</param>
+        /// <param name="propertyName">Name of that property.</param>
         /// <param name="includeChildren">Should it include children?</param>
-        protected void PaintPropertyFromProperty(Rect rect, SerializedProperty serializedProperty, string name, bool includeChildren = false) =>
-            EditorGUI.PropertyField(rect, serializedProperty.FindPropertyRelative(name), includeChildren);
+        protected void PaintPropertyFromProperty(Rect rect, SerializedProperty serializedProperty, string propertyName, bool includeChildren = false) =>
+            EditorGUI.PropertyField(rect, serializedProperty.FindPropertyRelative(propertyName), includeChildren);
     }
 }

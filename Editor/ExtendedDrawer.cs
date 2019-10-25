@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Varguiniano.ExtendedEditor
+namespace Varguiniano.ExtendedEditor.Editor
 {
     /// <summary>
     /// Extended property drawer.

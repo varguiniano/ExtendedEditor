@@ -1,13 +1,13 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Varguiniano.ExtendedEditor
+namespace Varguiniano.ExtendedEditor.Editor
 {
     /// <inheritdoc />
     /// <summary>
     /// Class with some utilities for editors.
     /// </summary>
-    public abstract class MonoBehaviourExtendedEditor<T> : Editor where T : MonoBehaviour
+    public abstract class MonoBehaviourExtendedEditor<T> : UnityEditor.Editor where T : MonoBehaviour
     {
         /// <summary>
         /// Reference to the object being edited.
@@ -37,9 +37,9 @@ namespace Varguiniano.ExtendedEditor
         /// <summary>
         /// Paints the property given.
         /// </summary>
-        /// <param name="name">Name of that property.</param>
+        /// <param name="propertyName">Name of that property.</param>
         /// <param name="includeChildren">Should it include children?</param>
-        protected void PaintProperty(string name, bool includeChildren = false) =>
-            EditorGUILayout.PropertyField(serializedObject.FindProperty(name), includeChildren);
+        protected void PaintProperty(string propertyName, bool includeChildren = false) =>
+            EditorGUILayout.PropertyField(serializedObject.FindProperty(propertyName), includeChildren);
     }
 }
